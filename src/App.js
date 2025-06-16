@@ -8,16 +8,16 @@ import { ArrowLeft, Plus, Trash2, Trophy, Users, BarChart2, Calendar, RefreshCw,
 // --- Firebase Configuration ---
 // These global variables are provided by the environment.
 const firebaseConfig = {
-  apiKey: "AIzaSyDfFKO61XlEZ6o-g0N1UKl9pi4t-Urmzmc",
-  authDomain: "esportemuz-v1.firebaseapp.com",
-  projectId: "esportemuz-v1",
-  storageBucket: "esportemuz-v1.firebasestorage.app",
-  messagingSenderId: "833982399842",
-  appId: "1:833982399842:web:4f5c8de14f26ef76ef583b",
-  measurementId: "G-NB9Z105VVV"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 // const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-championship-manager';
-const appId = 'default-championship-manager';
+const appId = process.env.REACT_APP_APP_ID || 'default-championship-manager';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
