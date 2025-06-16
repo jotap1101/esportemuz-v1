@@ -1,16 +1,27 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { initializeApp } from 'firebase/app';
+// import { getAnalytics } from "firebase/analytics";
 import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, doc, addDoc, getDocs, setDoc, deleteDoc, onSnapshot, getDoc, writeBatch, query } from 'firebase/firestore';
 import { ArrowLeft, Plus, Trash2, Trophy, Users, BarChart2, Calendar, RefreshCw, Edit, Check, X, MapPin } from 'lucide-react';
 
 // --- Firebase Configuration ---
 // These global variables are provided by the environment.
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-championship-manager';
+const firebaseConfig = {
+  apiKey: "AIzaSyDfFKO61XlEZ6o-g0N1UKl9pi4t-Urmzmc",
+  authDomain: "esportemuz-v1.firebaseapp.com",
+  projectId: "esportemuz-v1",
+  storageBucket: "esportemuz-v1.firebasestorage.app",
+  messagingSenderId: "833982399842",
+  appId: "1:833982399842:web:4f5c8de14f26ef76ef583b",
+  measurementId: "G-NB9Z105VVV"
+};
+// const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-championship-manager';
+const appId = 'default-championship-manager';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
